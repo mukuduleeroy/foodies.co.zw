@@ -1,0 +1,68 @@
+:root {
+  /* Color roles — replace brand values for each client */
+  --color-bg: #f7f5f0;
+  --color-surface: #ffffff;
+  --color-surface-alt: #ece8df;
+  --color-text: #111111;
+  --color-text-muted: #66635d;
+  --color-brand: #e84a1a;
+  --color-brand-strong: #c6380d;
+  --color-brand-contrast: #ffffff;
+  --color-border: color-mix(in srgb, var(--color-text) 14%, transparent);
+  --color-focus: #2563eb;
+
+  /* Typography */
+  --font-display: "Inter", Arial, sans-serif;
+  --font-heading: "Inter", Arial, sans-serif;
+  --font-body: "Inter", Arial, sans-serif;
+
+  --text-xs: clamp(0.75rem, 0.72rem + 0.1vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.82rem + 0.15vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+  --text-2xl: clamp(2.25rem, 1.8rem + 2vw, 4rem);
+  --text-hero: clamp(3rem, 2.2rem + 5vw, 7rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --space-11: 12rem;
+
+  /* Layout */
+  --container-max: 90rem;
+  --page-gutter: clamp(1rem, 3vw, 4rem);
+
+  /* Shape */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
+  --radius-pill: 999px;
+
+  /* Layering */
+  --z-base: 0;
+  --z-header: 100;
+  --z-menu: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit: cubic-bezier(0.7, 0, 0.84, 0);
+
+  --duration-instant: 100ms;
+  --duration-fast: 160ms;
+  --duration-normal: 280ms;
+  --duration-slow: 500ms;
+  --duration-reveal: 800ms;
+}

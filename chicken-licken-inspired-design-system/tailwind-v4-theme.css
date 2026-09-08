@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme inline {
+  --color-site-bg: var(--color-bg);
+  --color-site-surface: var(--color-surface);
+  --color-site-surface-alt: var(--color-surface-alt);
+  --color-site-text: var(--color-text);
+  --color-site-muted: var(--color-text-muted);
+  --color-brand: var(--color-brand);
+  --color-brand-strong: var(--color-brand-strong);
+  --color-brand-contrast: var(--color-brand-contrast);
+
+  --font-display: var(--font-display);
+  --font-heading: var(--font-heading);
+  --font-sans: var(--font-body);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-pill);
+}
+
+/* Example semantic usage:
+<div class="bg-site-bg text-site-text font-sans">
+<h1 class="font-display text-[length:var(--text-hero)]">
+*/
