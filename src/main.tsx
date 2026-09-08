@@ -101,31 +101,31 @@ const products: Product[] = [
 
 const showcaseCategories: Category[] = [
   {
-    title: "Just Hotwings",
-    eyebrow: "Crispy heat",
-    image: image("481775242_622314300768730_5303396974757636470_n.png"),
-    alt: "Saucy Foodies hotwings",
+    title: "Loaded Pizza",
+    eyebrow: "Cheesy slices",
+    image: image("category-pizza.png"),
+    alt: "Loaded Foodies pizza on a wooden paddle",
     href: "#specials"
   },
   {
-    title: "Soulicious Specials",
-    eyebrow: "Loaded value",
-    image: image("482316903_619842441015916_562066848451706096.png"),
-    alt: "Foodies loaded specials",
+    title: "Burger Meals",
+    eyebrow: "Stacked bites",
+    image: image("category-burger-fries.png"),
+    alt: "Foodies crispy chicken burger meal with fries",
     href: "#specials"
   },
   {
-    title: "Easy Bucks Menu",
-    eyebrow: "Quick bites",
-    image: image("482084844_623968770603283_859170947419355809_n.png"),
-    alt: "Foodies quick menu item",
+    title: "Chicken Boxes",
+    eyebrow: "Crispy value",
+    image: image("category-chicken-box.png"),
+    alt: "Foodies fried chicken box meal with fries and sauces",
     href: "#specials"
   },
   {
-    title: "Just Chick'n Burgers",
-    eyebrow: "Stacked",
-    image: image("unnamed.webp"),
-    alt: "Foodies burger-style meal",
+    title: "Sweet Cups",
+    eyebrow: "Dessert time",
+    image: image("category-dessert-cup.png"),
+    alt: "Foodies dessert cup with waffles and chocolate drizzle",
     href: "#specials"
   }
 ];
@@ -222,6 +222,7 @@ function Section2() {
                   Chick'n Burgers
                 </>
               )}
+              {category.title}
             </span>
             <img src={category.image} alt={category.alt} />
           </a>
