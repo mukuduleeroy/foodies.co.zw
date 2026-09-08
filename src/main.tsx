@@ -276,16 +276,28 @@ function FinalSection() {
     <section className="final-section" id="find-us" aria-labelledby="find-title">
       <div className="map-hero">
         <div className="map-sheet" aria-hidden="true">
-          <span className="map-route"></span>
-          <span className="map-pin map-pin-one">F</span>
-          <span className="map-pin map-pin-two">F</span>
-          <span className="map-pin map-pin-three">F</span>
-          <span className="map-pin map-pin-four">F</span>
+          <img className="map-art" src={image("find-us-map.png")} alt="" />
+          <span className="map-pin map-pin-one">
+            <img src={image("logo symbol.jpg")} alt="" />
+          </span>
+          <span className="map-pin map-pin-two">
+            <img src={image("logo symbol.jpg")} alt="" />
+          </span>
         </div>
         <div className="find-copy">
           <span className="find-rule" aria-hidden="true"></span>
           <h2 id="find-title">Find Us</h2>
           <p>We're never far away</p>
+        </div>
+        <div className="location-list" aria-label="Foodies locations">
+          <article className="location-card">
+            <strong>Karigamombe Centre</strong>
+            <span>Corner Julius Nyerere Way & Samora Machel Ave, Harare, Zimbabwe</span>
+          </article>
+          <article className="location-card">
+            <strong>41 Kelvin North Rd</strong>
+            <span>Graniteside, Harare, Zimbabwe</span>
+          </article>
         </div>
         <form className="store-search" aria-label="Search Foodies stores">
           <label className="sr-only" htmlFor="final-store-search">
@@ -309,9 +321,21 @@ function FinalSection() {
         </nav>
         <div className="footer-social" aria-label="Follow Foodies">
           <span>Follow us</span>
-          <a href="#contact" aria-label="Foodies on Facebook">f</a>
-          <a href="#contact" aria-label="Foodies on X">t</a>
-          <a href="#contact" aria-label="Foodies on YouTube">▶</a>
+          <a href="#contact" aria-label="Foodies on Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.5 8.1V6.6c0-.7.5-.9.9-.9h2.3V2h-3.2c-3.6 0-4.4 2.7-4.4 4.4v1.7H7.3V12h2.8v10h4.4V12h3l.5-3.9h-3.5Z" />
+            </svg>
+          </a>
+          <a href="#contact" aria-label="Foodies on X">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.8 3h3.1l-6.7 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.2L2 3h6.4l4.4 5.9L17.8 3Zm-1.1 16.2h1.7L7.5 4.7H5.7l11 14.5Z" />
+            </svg>
+          </a>
+          <a href="#contact" aria-label="Foodies on YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 12s0-3.3-.4-4.9c-.2-.9-.9-1.6-1.8-1.8C18.2 4 12 4 12 4s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.7 2 12 2 12s0 3.3.4 4.9c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.9.4-4.9ZM10 15.5v-7l6 3.5-6 3.5Z" />
+            </svg>
+          </a>
         </div>
       </footer>
     </section>
@@ -359,3 +383,4 @@ createRoot(document.getElementById("root")!).render(
     <App />
   </React.StrictMode>
 );
+
