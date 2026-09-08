@@ -980,8 +980,8 @@ h3 {
 .menu-stage {
   position: relative;
   min-height: clamp(26rem, 100vw, 42rem);
-  margin-top: calc(var(--showcase-card-overlap) * -0.58);
-  padding: clamp(9.5rem, 34vw, 16rem) var(--page-gutter) clamp(8rem, 24vw, 14rem);
+  margin-top: calc(var(--showcase-card-overlap) * -0.28);
+  padding: clamp(10.75rem, 38vw, 17rem) var(--page-gutter) clamp(8rem, 24vw, 14rem);
   overflow: hidden;
   background:
     radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.08), transparent 33%),
@@ -1022,7 +1022,7 @@ h3 {
   width: min(100%, 48rem);
   margin: 0 auto;
   color: white;
-  font-size: clamp(2rem, 10vw, 4rem);
+  font-size: clamp(1.6rem, 7.5vw, 3rem);
   font-weight: 950;
   line-height: 0.95;
   text-align: center;
@@ -1042,62 +1042,28 @@ h3 {
 
 .stage-sauce {
   position: absolute;
-  left: clamp(1rem, 9vw, 12rem);
-  top: clamp(3rem, 11vw, 7rem);
+  left: clamp(0.75rem, 9vw, 10rem);
+  top: clamp(3.25rem, 11vw, 7.2rem);
   z-index: 2;
-  width: clamp(4.5rem, 16vw, 13rem);
-  aspect-ratio: 2.2 / 1;
-  object-fit: cover;
-  border-radius: 0.35rem;
-  transform: rotate(4deg);
-  filter: hue-rotate(310deg) saturate(1.4) drop-shadow(0 1.2rem 1rem rgba(0, 0, 0, 0.45));
+  width: clamp(8rem, 24vw, 18rem);
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+  transform: rotate(1deg);
+  filter: drop-shadow(0 1.1rem 1rem rgba(0, 0, 0, 0.42));
 }
 
 .stage-chillies {
   position: absolute;
-  right: clamp(1rem, 9vw, 12rem);
-  top: clamp(12rem, 40vw, 17rem);
+  right: clamp(0.75rem, 8vw, 9rem);
+  top: clamp(12rem, 38vw, 16rem);
   z-index: 2;
-  width: clamp(7rem, 26vw, 18rem);
-  height: clamp(4.5rem, 14vw, 8rem);
-}
-
-.stage-chillies span {
-  position: absolute;
-  left: 8%;
-  top: 42%;
-  width: 86%;
-  height: 1.45rem;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--logo-yellow) 45%, var(--logo-black)) 0%, var(--logo-yellow) 42%, color-mix(in srgb, var(--logo-yellow) 55%, var(--logo-black)) 100%);
-  border-radius: 999px 30% 999px 30%;
-  filter: drop-shadow(0 0.8rem 0.65rem rgba(0, 0, 0, 0.35));
-  transform: rotate(-11deg);
-}
-
-.stage-chillies span::after {
-  content: "";
-  position: absolute;
-  right: -0.85rem;
-  top: -0.45rem;
-  width: 1.4rem;
-  height: 0.35rem;
-  background: color-mix(in srgb, var(--logo-yellow) 35%, var(--logo-black));
-  border-radius: 999px;
-  transform: rotate(-28deg);
-}
-
-.stage-chillies span:nth-child(2) {
-  top: 22%;
-  left: 18%;
-  width: 72%;
-  transform: rotate(9deg);
-}
-
-.stage-chillies span:nth-child(3) {
-  top: 62%;
-  left: 0;
-  width: 78%;
-  transform: rotate(4deg);
+  width: clamp(9.5rem, 30vw, 21rem);
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 1.1rem 1rem rgba(0, 0, 0, 0.38));
 }
 
 .stage-bottom-food {
@@ -1142,12 +1108,12 @@ h3 {
 
   .menu-stage {
     min-height: clamp(33rem, 60vw, 42rem);
-    margin-top: calc(var(--showcase-card-overlap) * -0.62);
-    padding-top: clamp(12rem, 24vw, 16rem);
+    margin-top: calc(var(--showcase-card-overlap) * -0.32);
+    padding-top: clamp(13rem, 25vw, 17rem);
   }
 
   .whole-menu-link {
-    font-size: clamp(2.7rem, 6vw, 4.2rem);
+    font-size: clamp(2rem, 4vw, 3.1rem);
   }
 }
 
@@ -1194,23 +1160,23 @@ h3 {
 
   .menu-stage {
     min-height: clamp(34rem, 38vw, 43rem);
-    margin-top: calc(var(--showcase-card-overlap) * -0.72);
-    padding-top: clamp(14.5rem, 16vw, 17rem);
+    margin-top: calc(var(--showcase-card-overlap) * -0.36);
+    padding-top: clamp(15.5rem, 17vw, 18.5rem);
   }
 
   .whole-menu-link {
     width: min(52vw, 46rem);
-    font-size: clamp(3rem, 3.35vw, 4rem);
+    font-size: clamp(2.3rem, 2.6vw, 3.15rem);
   }
 
   .stage-sauce {
     top: clamp(11.25rem, 14vw, 15rem);
-    width: clamp(9rem, 12vw, 15rem);
+    width: clamp(13rem, 15vw, 18rem);
   }
 
   .stage-chillies {
     top: clamp(10.75rem, 14vw, 15rem);
-    width: clamp(12rem, 16vw, 21rem);
+    width: clamp(15rem, 18vw, 22rem);
   }
 }
 

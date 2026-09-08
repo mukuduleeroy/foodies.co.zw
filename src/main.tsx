@@ -229,16 +229,12 @@ function Section2() {
         ))}
       </div>
       <div className="menu-stage">
-        <img className="stage-sauce" src={image("logo symbol.jpg")} alt="" />
+        <img className="stage-sauce" src={image("foodies-ketchup-sachets.png")} alt="" />
         <a className="whole-menu-link" href="#specials">
           View our whole menu
           <ChevronRight aria-hidden="true" size={58} strokeWidth={4} />
         </a>
-        <span className="stage-chillies" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
+        <img className="stage-chillies" src={image("red-chillies.png")} alt="" />
         <img className="stage-bottom-food stage-bottom-left" src={image("482808553_624105437256283_2265515229945450239_n.png")} alt="" />
         <img className="stage-bottom-food stage-bottom-right" src={image("unnamed (2).webp")} alt="" />
       </div>
