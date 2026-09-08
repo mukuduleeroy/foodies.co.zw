@@ -545,6 +545,11 @@ h3 {
     margin-top: 0.65rem;
   }
 
+  .hero-subtitle,
+  .hero-actions {
+    display: none;
+  }
+
   .hero-media {
     inset: var(--hero-header-height) 0 6rem;
   }
