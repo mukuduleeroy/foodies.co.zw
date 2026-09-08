@@ -235,8 +235,6 @@ function Section2() {
           <ChevronRight aria-hidden="true" size={58} strokeWidth={4} />
         </a>
         <img className="stage-chillies" src={image("red-chillies.png")} alt="" />
-        <img className="stage-bottom-food stage-bottom-left" src={image("482808553_624105437256283_2265515229945450239_n.png")} alt="" />
-        <img className="stage-bottom-food stage-bottom-right" src={image("unnamed (2).webp")} alt="" />
       </div>
     </section>
   );
@@ -245,21 +243,27 @@ function Section2() {
 function FollowSection() {
   return (
     <section className="follow-section" id="specials" aria-labelledby="follow-title">
-      <img className="follow-food follow-food-left" src={image("482084844_623968770603283_859170947419355809_n.png")} alt="" />
-      <img className="follow-food follow-food-right" src={image("482084844_623968770603283_859170947419355809_n.png")} alt="" />
+      <img className="follow-food follow-food-left" src={image("follow-fries.png")} alt="" />
+      <img className="follow-food follow-food-right" src={image("follow-burger.png")} alt="" />
       <div className="follow-content">
         <span className="follow-rule" aria-hidden="true"></span>
         <h2 id="follow-title">Follow Us</h2>
         <p>We'll show you the way</p>
         <div className="social-links" aria-label="Foodies social channels">
           <a className="social-link" href="#contact" aria-label="Foodies on Facebook">
-            f
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.5 8.1V6.6c0-.7.5-.9.9-.9h2.3V2h-3.2c-3.6 0-4.4 2.7-4.4 4.4v1.7H7.3V12h2.8v10h4.4V12h3l.5-3.9h-3.5Z" />
+            </svg>
           </a>
           <a className="social-link" href="#contact" aria-label="Foodies on X">
-            t
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.8 3h3.1l-6.7 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.2L2 3h6.4l4.4 5.9L17.8 3Zm-1.1 16.2h1.7L7.5 4.7H5.7l11 14.5Z" />
+            </svg>
           </a>
           <a className="social-link social-link-video" href="#contact" aria-label="Foodies on YouTube">
-            <span></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 12s0-3.3-.4-4.9c-.2-.9-.9-1.6-1.8-1.8C18.2 4 12 4 12 4s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.7 2 12 2 12s0 3.3.4 4.9c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.9.4-4.9ZM10 15.5v-7l6 3.5-6 3.5Z" />
+            </svg>
           </a>
         </div>
       </div>

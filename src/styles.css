@@ -1066,26 +1066,6 @@ h3 {
   filter: drop-shadow(0 1.1rem 1rem rgba(0, 0, 0, 0.38));
 }
 
-.stage-bottom-food {
-  position: absolute;
-  z-index: 1;
-  bottom: -7rem;
-  width: clamp(8rem, 32vw, 19rem);
-  aspect-ratio: 1;
-  object-fit: contain;
-  border-radius: 0;
-  opacity: 0.85;
-  filter: drop-shadow(0 -1rem 2rem rgba(0, 0, 0, 0.4));
-}
-
-.stage-bottom-left {
-  left: -3rem;
-}
-
-.stage-bottom-right {
-  right: -3rem;
-}
-
 @media (min-width: 768px) {
   .menu-showcase {
     --showcase-card-overlap: clamp(7.4rem, 13vw, 10rem);
@@ -1379,27 +1359,15 @@ h3 {
     filter var(--duration-normal) var(--ease-standard);
 }
 
+.social-link svg {
+  width: 50%;
+  height: 50%;
+  fill: currentColor;
+}
+
 .social-link:hover {
   transform: translateY(-0.35rem);
   filter: saturate(1.08);
-}
-
-.social-link-video span {
-  width: 52%;
-  aspect-ratio: 1.45 / 1;
-  background: white;
-  border-radius: 0.55rem;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-.social-link-video span::after {
-  content: "";
-  display: block;
-  width: 38%;
-  height: 56%;
-  margin: 14% 0 0 36%;
-  background: color-mix(in srgb, var(--logo-yellow) 64%, var(--logo-black));
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
 .follow-food {
@@ -1407,26 +1375,26 @@ h3 {
   z-index: 2;
   pointer-events: none;
   user-select: none;
-  object-fit: cover;
+  object-fit: contain;
   filter: drop-shadow(0 2rem 2.4rem rgba(0, 0, 0, 0.55));
 }
 
 .follow-food-left {
-  left: -46%;
-  bottom: -9%;
-  width: clamp(22rem, 96vw, 42rem);
-  aspect-ratio: 0.82 / 1;
+  left: -42%;
+  bottom: -4%;
+  width: clamp(24rem, 100vw, 48rem);
+  aspect-ratio: 1;
   border-radius: 0;
-  object-position: 92% 58%;
+  object-position: center;
 }
 
 .follow-food-right {
-  right: -36%;
-  top: 4%;
-  width: clamp(22rem, 92vw, 47rem);
+  right: -48%;
+  top: 6%;
+  width: clamp(28rem, 112vw, 56rem);
   aspect-ratio: 1;
-  border-radius: 50%;
-  object-position: 52% 48%;
+  border-radius: 0;
+  object-position: center;
 }
 
 @media (max-width: 520px) {
@@ -1437,14 +1405,14 @@ h3 {
 
   .follow-food-left {
     opacity: 0.72;
-    left: -72%;
-    bottom: -4%;
+    left: -58%;
+    bottom: -6%;
   }
 
   .follow-food-right {
     opacity: 0.76;
-    right: -68%;
-    top: -2rem;
+    right: -76%;
+    top: 1rem;
   }
 }
 
@@ -1454,15 +1422,15 @@ h3 {
   }
 
   .follow-food-left {
-    left: -34%;
-    bottom: -13%;
-    width: clamp(34rem, 58vw, 52rem);
+    left: -25rem;
+    bottom: -8rem;
+    width: clamp(42rem, 60vw, 58rem);
   }
 
   .follow-food-right {
-    right: -23%;
-    top: 0;
-    width: clamp(34rem, 58vw, 57rem);
+    right: -28rem;
+    top: 2rem;
+    width: clamp(46rem, 64vw, 64rem);
   }
 }
 
@@ -1473,15 +1441,15 @@ h3 {
   }
 
   .follow-food-left {
-    left: -18rem;
-    bottom: -10rem;
-    width: min(44vw, 54rem);
+    left: -13rem;
+    bottom: -9rem;
+    width: min(44vw, 56rem);
   }
 
   .follow-food-right {
-    right: -12rem;
-    top: 2rem;
-    width: min(45vw, 58rem);
+    right: -16rem;
+    top: 1.5rem;
+    width: min(48vw, 64rem);
   }
 }
 
@@ -1962,16 +1930,18 @@ h3 {
 
 .follow-section {
   background:
-    linear-gradient(90deg, rgba(23, 25, 28, 0.035) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(23, 25, 28, 0.035) 1px, transparent 1px),
-    linear-gradient(180deg, #ffffff, #eef0f1);
-  background-size: 5.5rem 5.5rem, 5.5rem 5.5rem, auto;
+    radial-gradient(ellipse at 50% 44%, rgba(255, 255, 255, 0.06), transparent 36%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--logo-black) 94%, var(--logo-white)) 0 2px, var(--logo-black) 2px 7px, color-mix(in srgb, var(--logo-black) 91%, var(--logo-white)) 7px 10px),
+    var(--logo-black);
+  background-size: auto, 5.5rem 5.5rem, 5.5rem 5.5rem, 13rem 100%, auto;
 }
 
 .follow-section::before {
   background:
-    linear-gradient(180deg, rgba(244, 196, 0, 0.1), transparent 20%, transparent 78%, rgba(23, 25, 28, 0.04)),
-    radial-gradient(ellipse at 50% 48%, transparent 0 33%, rgba(23, 25, 28, 0.08) 82%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 14%, transparent 78%, rgba(255, 255, 255, 0.04)),
+    radial-gradient(ellipse at 50% 48%, transparent 0 33%, rgba(0, 0, 0, 0.72) 82%);
 }
 
 .follow-rule {
@@ -1983,9 +1953,16 @@ h3 {
   color: var(--logo-yellow);
 }
 
-.follow-content p,
+.follow-content h2 {
+  color: var(--logo-white);
+}
+
 .find-copy p {
   color: var(--color-text-muted);
+}
+
+.follow-content p {
+  color: color-mix(in srgb, var(--logo-white) 68%, transparent);
 }
 
 .whole-menu-link {
@@ -1995,6 +1972,9 @@ h3 {
 
 .social-link {
   color: var(--color-surface);
+  background:
+    linear-gradient(225deg, rgba(145, 45, 14, 0.55) 0 24%, transparent 24%),
+    linear-gradient(180deg, #ff6a21, #f25a18);
 }
 
 .store-search input,
