@@ -737,7 +737,7 @@ h3 {
 
 .hero-content {
   z-index: 10;
-  width: min(90vw, 74rem);
+  width: min(96vw, 96rem);
   margin: 0 auto clamp(4rem, 12vw, 7rem);
 }
 
@@ -747,18 +747,21 @@ h3 {
 
 .hero h1 {
   z-index: 10;
-  color: #f7d34b;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: clamp(4.8rem, 18vw, 13rem);
+  color: var(--logo-yellow);
+  font-family: "Arial Rounded MT Bold", "Avenir Next Rounded", "Nunito Sans", "Trebuchet MS", Arial, sans-serif;
+  font-size: clamp(4.6rem, 20vw, 16.5rem);
   font-style: normal;
-  line-height: 0.8;
-  letter-spacing: 0.02em;
+  font-weight: 1000;
+  line-height: 0.78;
+  letter-spacing: 0;
+  font-synthesis-weight: auto;
+  -webkit-text-stroke: 0;
   text-shadow:
-    1px 1px 0 #d8ad00,
-    2px 2px 0 #d8ad00,
-    3px 3px 0 #a98500,
-    4px 4px 0 #655100,
-    0 1.25rem 2rem rgba(0, 0, 0, 0.68);
+    0 2px 0 rgba(255, 255, 255, 0.52),
+    1px 2px 0 #efbf00,
+    2px 4px 0 #d9a900,
+    3px 6px 0 #b88e00,
+    0 1.15rem 1.9rem rgba(0, 0, 0, 0.48);
   text-transform: uppercase;
 }
 
