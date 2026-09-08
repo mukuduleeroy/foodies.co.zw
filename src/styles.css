@@ -979,9 +979,9 @@ h3 {
 
 .menu-stage {
   position: relative;
-  min-height: clamp(26rem, 100vw, 42rem);
+  min-height: clamp(18rem, 64vw, 28rem);
   margin-top: calc(var(--showcase-card-overlap) * -0.28);
-  padding: clamp(10.75rem, 38vw, 17rem) var(--page-gutter) clamp(8rem, 24vw, 14rem);
+  padding: clamp(10.75rem, 38vw, 17rem) var(--page-gutter) clamp(3rem, 9vw, 5.5rem);
   overflow: hidden;
   background:
     radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.08), transparent 33%),
@@ -1087,7 +1087,7 @@ h3 {
   }
 
   .menu-stage {
-    min-height: clamp(33rem, 60vw, 42rem);
+    min-height: clamp(22rem, 40vw, 30rem);
     margin-top: calc(var(--showcase-card-overlap) * -0.32);
     padding-top: clamp(13rem, 25vw, 17rem);
   }
@@ -1139,7 +1139,7 @@ h3 {
   }
 
   .menu-stage {
-    min-height: clamp(34rem, 38vw, 43rem);
+    min-height: clamp(24rem, 28vw, 31rem);
     margin-top: calc(var(--showcase-card-overlap) * -0.36);
     padding-top: clamp(15.5rem, 17vw, 18.5rem);
   }
@@ -1170,7 +1170,7 @@ h3 {
   }
 
   .menu-stage {
-    min-height: 43rem;
+    min-height: 31rem;
   }
 }
 
