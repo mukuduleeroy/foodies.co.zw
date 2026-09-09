@@ -152,37 +152,7 @@ function Section2() {
       <div className="showcase-card-row" aria-label="Featured menu categories">
         {showcaseCategories.map((category) => (
           <Link className="showcase-card" to="/menu" key={category.title}>
-            <span className="showcase-card-title">
-              {category.title === "Just Hotwings" && (
-                <>
-                  Just
-                  <br />
-                  Hotwings®
-                </>
-              )}
-              {category.title === "Soulicious Specials" && (
-                <>
-                  Soulicious®
-                  <br />
-                  Specials
-                </>
-              )}
-              {category.title === "Easy Bucks Menu" && (
-                <>
-                  Easy
-                  <br />
-                  Bucks® Menu
-                </>
-              )}
-              {category.title === "Just Chick'n Burgers" && (
-                <>
-                  Just
-                  <br />
-                  Chick'n Burgers
-                </>
-              )}
-              {category.title}
-            </span>
+            <span className="showcase-card-title">{category.title}</span>
             <img src={category.image} alt={category.alt} />
           </Link>
         ))}
@@ -356,4 +326,5 @@ createRoot(document.getElementById("root")!).render(
     <App />
   </React.StrictMode>
 );
+
 
