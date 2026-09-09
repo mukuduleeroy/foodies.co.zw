@@ -257,7 +257,7 @@ img {
   display: grid;
   justify-items: center;
   gap: 0.5rem;
-  padding: 2.25rem 1.25rem 3.35rem;
+  padding: 2.35rem 1.25rem 4.2rem;
   overflow: hidden;
   color: var(--logo-black);
   text-align: center;
@@ -269,15 +269,12 @@ img {
 .mobile-menu-profile::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 4.6rem;
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.7), transparent 56%),
-    linear-gradient(180deg, rgba(37, 170, 156, 0.42), rgba(12, 112, 111, 0.2) 45%, var(--logo-white) 100%);
-  border-radius: 0;
-  clip-path: ellipse(78% 100% at 50% 100%);
+  left: -18%;
+  right: -18%;
+  bottom: -3.65rem;
+  height: 7.25rem;
+  background: var(--logo-white);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
 }
 
 .mobile-menu-profile img {
@@ -323,13 +320,11 @@ img {
   display: grid;
   align-content: start;
   gap: 0.3rem;
-  padding: 1.1rem 1rem 0.7rem;
+  padding: 1.2rem 1rem 0.7rem;
   overflow-y: auto;
   font-size: 0.98rem;
   font-weight: 850;
-  background:
-    linear-gradient(180deg, rgba(12, 112, 111, 0.08), transparent 5rem),
-    var(--logo-white);
+  background: var(--logo-white);
 }
 
 .mobile-menu-links > span {
