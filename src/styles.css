@@ -3482,8 +3482,41 @@ h3 {
   }
 }
 
+/* Large phones: smooths the handoff from extra-small phones into tablet sizing before categories begin. */
+@media (min-width: 481px) and (max-width: 640px) {
+  .hero {
+    min-height: clamp(38rem, 128vw, 47rem);
+  }
+
+  .hero-content {
+    margin-bottom: clamp(7rem, 25vw, 10rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(3.05rem, 15vw, 5.9rem);
+  }
+
+  .hero-main-food {
+    top: clamp(10.2rem, 30vw, 15.25rem);
+    width: clamp(18rem, 76vw, 30.5rem);
+  }
+}
+
 /* Tablets and small laptops: two-column content where it improves scanability, still below desktop lock. */
 @media (min-width: 641px) and (max-width: 1023px) {
+  .hero-content {
+    margin-bottom: clamp(7.75rem, 15vw, 10.75rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(5.5rem, 11vw, 7.9rem);
+  }
+
+  .hero-main-food {
+    top: clamp(13rem, 18vw, 16.75rem);
+    width: clamp(28rem, 52vw, 33rem);
+  }
+
   .menu-grid,
   .search-results-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
