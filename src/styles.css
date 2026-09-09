@@ -3140,7 +3140,7 @@ h3 {
   }
 
   .map-sheet {
-    bottom: clamp(5.8rem, 19vw, 8.5rem);
+    bottom: clamp(9rem, 30vw, 13rem);
     width: min(130vw, 56rem);
   }
 
@@ -3150,7 +3150,7 @@ h3 {
   }
 
   .location-list {
-    margin-top: clamp(7.25rem, 28vw, 11rem);
+    margin-top: clamp(10.5rem, 38vw, 14rem);
     margin-bottom: clamp(0.65rem, 2.5vw, 1rem);
   }
 
@@ -3301,12 +3301,12 @@ h3 {
   }
 
   .map-sheet {
-    bottom: clamp(6rem, 25vw, 8rem);
+    bottom: clamp(8.8rem, 39vw, 11.5rem);
     width: min(142vw, 38rem);
   }
 
   .location-list {
-    margin-top: clamp(6.5rem, 34vw, 9rem);
+    margin-top: clamp(9.25rem, 48vw, 12rem);
   }
 }
 
