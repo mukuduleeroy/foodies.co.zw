@@ -40,11 +40,13 @@
 html {
   scroll-behavior: smooth;
   background: var(--color-bg);
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   color: var(--color-text);
   background:
     linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 16%, transparent) 1px, transparent 1px),
@@ -72,6 +74,7 @@ a {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 :focus-visible {
@@ -517,15 +520,6 @@ h3 {
   .site-header {
     grid-template-columns: auto 1fr auto auto;
     padding-inline: max(var(--page-gutter), calc((100vw - 90rem) / 2 + 2rem));
-  }
-
-  .desktop-nav,
-  .desktop-action {
-    display: inline-flex;
-  }
-
-  .mobile-trigger {
-    display: none;
   }
 
   .hero {
@@ -2938,7 +2932,7 @@ h3 {
   }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 1024px) {
   .desktop-nav,
   .desktop-action {
     display: inline-flex;
@@ -2967,6 +2961,352 @@ h3 {
 
   .footer nav {
     grid-column: auto;
+  }
+}
+
+/* Mobile/tablet safety net: scoped below desktop so the finalized 1024px+ layout remains unchanged. */
+@media (max-width: 1023px) {
+  /* Keeps every page inside the viewport on phones and tablets. */
+  #root,
+  main,
+  section,
+  header,
+  footer {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Forces the requested hamburger navigation until desktop width. */
+  .site-header {
+    grid-template-columns: auto 1fr auto;
+    gap: 0.5rem;
+  }
+
+  .desktop-nav,
+  .desktop-action {
+    display: none;
+  }
+
+  .mobile-trigger {
+    display: inline-grid;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Prevents oversized logos and action controls from crowding 320px screens. */
+  .brand img {
+    width: clamp(3rem, 14vw, 4.35rem);
+    height: clamp(3rem, 14vw, 4.35rem);
+  }
+
+  .mobile-panel {
+    justify-items: start;
+    align-content: start;
+    gap: 0.8rem;
+    padding: calc(var(--hero-header-height) + 1.5rem) max(1rem, var(--page-gutter)) 2rem;
+    overflow-y: auto;
+    font-size: clamp(1.45rem, 8vw, 3rem);
+  }
+
+  .mobile-panel a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Uses fluid type and centered media so hero text and food imagery do not clip on narrow viewports. */
+  .hero {
+    min-height: clamp(36rem, 138vw, 52rem);
+    padding-inline: max(0.85rem, var(--page-gutter));
+  }
+
+  .hero-content {
+    width: min(100%, 42rem);
+    margin-bottom: clamp(2.25rem, 10vw, 5rem);
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.75rem, 18vw, 8.6rem);
+    overflow-wrap: normal;
+  }
+
+  .hero h1 span {
+    transform: none;
+  }
+
+  .hero-media {
+    inset: var(--hero-header-height) 0 clamp(4rem, 12vw, 6rem);
+  }
+
+  .hero-main-food {
+    top: clamp(14rem, 44vw, 21rem);
+    width: clamp(14rem, 72vw, 31rem);
+    max-width: 92vw;
+  }
+
+  .hero-seed,
+  .hero-drop {
+    scale: 0.8;
+  }
+
+  /* Turns category cards into a swipe-safe strip without causing document-level horizontal scroll. */
+  .showcase-card-row {
+    grid-auto-columns: minmax(14rem, 78vw);
+    padding-inline: max(0.85rem, var(--page-gutter));
+    overscroll-behavior-x: contain;
+  }
+
+  .showcase-card {
+    min-width: 0;
+  }
+
+  .showcase-card img,
+  .stage-sauce,
+  .stage-chillies,
+  .follow-food,
+  .map-art,
+  .menu-category-card > img,
+  .search-result-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Keeps the mini menu banner compact and readable on touch devices. */
+  .menu-stage {
+    min-height: clamp(10rem, 42vw, 18rem);
+    padding-inline: max(0.85rem, var(--page-gutter));
+  }
+
+  .whole-menu-link {
+    min-height: 44px;
+    font-size: clamp(1.05rem, 5vw, 2.1rem);
+    text-align: center;
+  }
+
+  .whole-menu-link svg {
+    width: clamp(1.65rem, 7vw, 3rem);
+    height: clamp(1.65rem, 7vw, 3rem);
+  }
+
+  /* Gives social graphics room while keeping the text block centered on small screens. */
+  .follow-section {
+    min-height: clamp(34rem, 128vw, 48rem);
+    padding-block: clamp(5rem, 18vw, 8rem);
+  }
+
+  .follow-content {
+    width: min(100%, 34rem);
+  }
+
+  .follow-content h2 {
+    font-size: clamp(2.6rem, 15vw, 5.6rem);
+  }
+
+  .follow-content p {
+    font-size: clamp(1rem, 5vw, 2rem);
+  }
+
+  .social-link {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keeps the map headline, search card, and address cards from overlapping the artwork. */
+  .map-hero {
+    min-height: clamp(38rem, 130vw, 54rem);
+    padding-inline: max(0.85rem, var(--page-gutter));
+  }
+
+  .map-sheet {
+    width: min(130vw, 56rem);
+  }
+
+  .location-list,
+  .store-search {
+    width: min(100%, 36rem);
+  }
+
+  .location-card {
+    min-width: 0;
+  }
+
+  .store-search input {
+    min-width: 0;
+  }
+
+  .store-search button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Shared page shells use tighter spacing before the desktop breakpoint. */
+  .route-page,
+  .menu-page,
+  .search-page,
+  .talk-page {
+    padding-inline: max(0.85rem, var(--page-gutter));
+  }
+
+  .route-hero h1,
+  .menu-page-hero h1,
+  .search-hero h1,
+  .talk-hero h1 {
+    font-size: clamp(2.55rem, 13vw, 5.6rem);
+  }
+
+  /* Menu/search cards become touch-friendly and keep dot leaders/prices inside card borders. */
+  .menu-category-card {
+    min-height: auto;
+  }
+
+  .menu-card-copy {
+    padding: clamp(1rem, 4vw, 1.4rem);
+  }
+
+  .menu-item-row {
+    grid-template-columns: minmax(0, auto) minmax(0.75rem, 1fr) auto;
+    font-size: clamp(0.78rem, 3vw, 0.9rem);
+  }
+
+  .menu-item-row span {
+    min-width: 0;
+  }
+
+  .menu-item-row button,
+  .pizza-size-tabs button,
+  .bakery-tags button,
+  .bakery-tags span,
+  .menu-card-link,
+  .menu-filter-tabs button,
+  .search-form button,
+  .search-suggestions button,
+  .search-result-copy button,
+  .talk-topic,
+  .talk-form button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .pizza-size-tabs,
+  .bakery-tags,
+  .menu-filter-tabs,
+  .search-suggestions {
+    max-width: 100%;
+  }
+
+  .search-form {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .search-form button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .search-summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .search-result-card {
+    grid-template-rows: clamp(10rem, 46vw, 13rem) 1fr;
+  }
+
+  .talk-content,
+  .talk-grid,
+  .final-footer {
+    width: min(100%, 100%);
+  }
+}
+
+/* Extra-small phones: single-column, compact controls, and no horizontal drift at 320px. */
+@media (max-width: 480px) {
+  :root {
+    --page-gutter: 0.85rem;
+  }
+
+  .site-header {
+    padding-inline: 0.75rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 17vw, 4.8rem);
+  }
+
+  .hero-main-food {
+    width: clamp(13rem, 86vw, 22rem);
+  }
+
+  .menu-grid,
+  .search-results-grid,
+  .talk-grid,
+  .talk-content {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-item-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .menu-item-row i {
+    display: none;
+  }
+
+  .menu-item-row button {
+    grid-column: 1 / -1;
+  }
+
+  .final-footer {
+    justify-items: start;
+    text-align: left;
+  }
+}
+
+/* Tablets and small laptops: two-column content where it improves scanability, still below desktop lock. */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .menu-grid,
+  .search-results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .talk-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .talk-content {
+    grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr);
+  }
+
+  .location-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Desktop navigation restore point: exact desktop behavior begins at the requested 1024px breakpoint. */
+@media (min-width: 1024px) {
+  .desktop-nav,
+  .desktop-action {
+    display: inline-flex;
+  }
+
+  .mobile-trigger {
+    display: none;
+  }
+}
+
+/* Ultra-wide and 4K: center major bands so graphics do not stretch endlessly on TV-sized displays. */
+@media (min-width: 1440px) {
+  .hero,
+  .menu-showcase,
+  .follow-section,
+  .final-section,
+  .route-page,
+  .menu-page,
+  .search-page,
+  .talk-page {
+    max-width: 1920px;
+    margin-inline: auto;
   }
 }
 
