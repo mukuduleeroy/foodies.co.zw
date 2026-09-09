@@ -1992,6 +1992,22 @@ h3 {
   border-top: 1px solid rgba(23, 25, 28, 0.1);
 }
 
+.site-header,
+.desktop-nav {
+  color: var(--color-text-muted);
+}
+
+.desktop-nav a {
+  color: var(--color-text-muted);
+  text-shadow: none;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a:focus-visible,
+.header-search {
+  color: var(--color-text);
+}
+
 .map-hero {
   align-content: start;
   min-height: clamp(38rem, 118vw, 48rem);

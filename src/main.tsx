@@ -29,10 +29,10 @@ const image = (name: string) => `/foodies-images/${name}`;
 
 const navItems: NavItem[] = [
   { label: "Home", href: "#top" },
-  { label: "About Us", href: "#menu" },
-  { label: "About", href: "#specials" },
-  { label: "Contact Us", href: "#contact" },
-  { label: "Login", href: "#order" }
+  { label: "Menu", href: "#menu" },
+  { label: "Follow Us", href: "#specials" },
+  { label: "Find Us", href: "#find-us" },
+  { label: "Contact Us", href: "#contact" }
 ];
 
 const categories: Category[] = [
