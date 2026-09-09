@@ -49,7 +49,6 @@ export function Header() {
                 <X size={22} />
               </button>
               <img src={image("logo symbol.jpg")} alt="" />
-              <strong>Foodies</strong>
               <span>Good food, big flavour.</span>
             </div>
 
@@ -71,10 +70,6 @@ export function Header() {
               <Link to="/search" onClick={() => setOpen(false)}>
                 <Search size={18} aria-hidden="true" />
                 Search
-              </Link>
-              <Link to="/menu" onClick={() => setOpen(false)}>
-                <ShoppingBag size={18} aria-hidden="true" />
-                Order now
               </Link>
             </div>
           </div>
