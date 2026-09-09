@@ -3022,12 +3022,21 @@ h3 {
 
   .hero-content {
     width: min(100%, 42rem);
-    margin-bottom: clamp(5.25rem, 18vw, 8.75rem);
+    margin-bottom: clamp(6.75rem, 22vw, 10.75rem);
   }
 
   /* Removes the floating hero CTA buttons on mobile/tablet only. */
   .hero-actions {
     display: none;
+  }
+
+  /* Keeps the supporting hero line visible after lifting the mobile hero stack. */
+  .hero-subtitle {
+    display: block;
+    max-width: min(92vw, 28rem);
+    margin-top: clamp(0.65rem, 2.5vw, 1rem);
+    font-size: clamp(0.86rem, 3.5vw, 1.05rem);
+    line-height: 1.25;
   }
 
   .hero h1 {
@@ -3045,7 +3054,7 @@ h3 {
   }
 
   .hero-main-food {
-    top: clamp(11.5rem, 35vw, 18rem);
+    top: clamp(10.25rem, 31vw, 16.75rem);
     width: clamp(14rem, 72vw, 31rem);
     max-width: 92vw;
   }
@@ -3239,9 +3248,13 @@ h3 {
     font-size: clamp(2.25rem, 17vw, 4.8rem);
   }
 
+  .hero-content {
+    margin-bottom: clamp(7.4rem, 28vw, 9.5rem);
+  }
+
   .hero-main-food {
     width: clamp(13rem, 86vw, 22rem);
-    top: clamp(10.75rem, 38vw, 14.5rem);
+    top: clamp(9.6rem, 34vw, 13.4rem);
   }
 
   .menu-grid,
