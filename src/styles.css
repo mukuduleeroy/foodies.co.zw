@@ -14,9 +14,9 @@
   --color-ink: var(--logo-black);
   --color-border: color-mix(in srgb, var(--logo-black) 14%, transparent);
   --color-focus: var(--logo-yellow);
-  --font-display: Inter, Arial, sans-serif;
-  --font-heading: Inter, Arial, sans-serif;
-  --font-body: Inter, Arial, sans-serif;
+  --font-display: "Nunito Sans", Arial, sans-serif;
+  --font-heading: "Nunito Sans", Arial, sans-serif;
+  --font-body: "Nunito Sans", Arial, sans-serif;
   --page-gutter: clamp(1rem, 3vw, 4rem);
   --container-max: 90rem;
   --radius-sm: 0.375rem;
