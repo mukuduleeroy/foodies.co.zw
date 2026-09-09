@@ -3022,7 +3022,12 @@ h3 {
 
   .hero-content {
     width: min(100%, 42rem);
-    margin-bottom: clamp(2.25rem, 10vw, 5rem);
+    margin-bottom: clamp(5.25rem, 18vw, 8.75rem);
+  }
+
+  /* Removes the floating hero CTA buttons on mobile/tablet only. */
+  .hero-actions {
+    display: none;
   }
 
   .hero h1 {
@@ -3040,7 +3045,7 @@ h3 {
   }
 
   .hero-main-food {
-    top: clamp(14rem, 44vw, 21rem);
+    top: clamp(11.5rem, 35vw, 18rem);
     width: clamp(14rem, 72vw, 31rem);
     max-width: 92vw;
   }
@@ -3236,6 +3241,7 @@ h3 {
 
   .hero-main-food {
     width: clamp(13rem, 86vw, 22rem);
+    top: clamp(10.75rem, 38vw, 14.5rem);
   }
 
   .menu-grid,
