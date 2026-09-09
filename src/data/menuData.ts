@@ -44,7 +44,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "burgers",
     title: "Burgers & Wraps",
-    image: image("menu-card-burgers-wraps.png"),
+    image: image("menu-card-burgers.png"),
     alt: "Foodies burger and fries",
     type: "list",
     items: [
@@ -82,7 +82,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "classic-pizza",
     title: "Classic Pizza",
-    image: image("menu-card-classic-pizza.png"),
+    image: image("menu-card-classic.png"),
     alt: "Foodies classic pizza",
     type: "pizza",
     pizzaItems: [
