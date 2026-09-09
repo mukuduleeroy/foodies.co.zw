@@ -3128,17 +3128,30 @@ h3 {
 
   /* Keeps the map headline, search card, and address cards from overlapping the artwork. */
   .map-hero {
-    min-height: clamp(38rem, 130vw, 54rem);
+    align-content: start;
+    min-height: clamp(31rem, 108vw, 43rem);
+    padding-top: clamp(1.75rem, 7vw, 3rem);
+    padding-bottom: clamp(2rem, 8vw, 3.5rem);
     padding-inline: max(0.85rem, var(--page-gutter));
   }
 
+  .find-copy {
+    margin-bottom: clamp(0.35rem, 2vw, 0.9rem);
+  }
+
   .map-sheet {
+    bottom: clamp(5.8rem, 19vw, 8.5rem);
     width: min(130vw, 56rem);
   }
 
   .location-list,
   .store-search {
     width: min(100%, 36rem);
+  }
+
+  .location-list {
+    margin-top: clamp(7.25rem, 28vw, 11rem);
+    margin-bottom: clamp(0.65rem, 2.5vw, 1rem);
   }
 
   .location-card {
@@ -3279,6 +3292,21 @@ h3 {
   .final-footer {
     justify-items: start;
     text-align: left;
+  }
+
+  .map-hero {
+    min-height: clamp(29rem, 125vw, 37rem);
+    padding-top: 1.4rem;
+    padding-bottom: 2rem;
+  }
+
+  .map-sheet {
+    bottom: clamp(6rem, 25vw, 8rem);
+    width: min(142vw, 38rem);
+  }
+
+  .location-list {
+    margin-top: clamp(6.5rem, 34vw, 9rem);
   }
 }
 
