@@ -1861,6 +1861,79 @@ h3 {
   font-weight: 850;
 }
 
+.route-page {
+  min-height: 100svh;
+  padding: calc(var(--hero-header-height) + 4rem) var(--page-gutter) 5rem;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(180deg, #ffffff, var(--color-bg));
+  background-size: 84px 84px, auto;
+}
+
+.route-hero {
+  display: grid;
+  gap: 1rem;
+  width: min(100%, 64rem);
+  margin: 0 auto clamp(2rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.route-hero > p {
+  margin: 0;
+  color: var(--color-brand-strong);
+  font-size: 0.82rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.route-hero h1 {
+  margin: 0;
+  color: var(--logo-yellow);
+  font-size: clamp(3rem, 12vw, 7rem);
+  line-height: 0.9;
+}
+
+.route-hero > span {
+  margin: 0 auto;
+  max-width: 34rem;
+  color: var(--color-text-muted);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 750;
+}
+
+.route-section-stack {
+  display: grid;
+  gap: 1rem;
+  width: min(100%, var(--container-max));
+  margin: 0 auto;
+}
+
+.route-section-placeholder {
+  display: grid;
+  gap: 0.45rem;
+  min-height: clamp(8rem, 18vw, 11rem);
+  padding: clamp(1rem, 3vw, 1.4rem);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(23, 25, 28, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0.8rem 1.8rem rgba(23, 25, 28, 0.06);
+}
+
+.route-section-placeholder h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.route-section-placeholder p {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
 /* Light surface treatment */
 .site-header {
   color: var(--logo-black);

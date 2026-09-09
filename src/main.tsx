@@ -1,6 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter, Link, Route, Routes, useLocation } from "react-router-dom";
 import { ChevronRight, Menu, Search, ShoppingBag, X } from "lucide-react";
+import { MenuPage } from "./pages/MenuPage";
+import { SearchPage } from "./pages/SearchPage";
+import { TalkToUsPage } from "./pages/TalkToUsPage";
 import "./styles.css";
 
 type NavItem = {
@@ -28,11 +32,10 @@ type Product = {
 const image = (name: string) => `/foodies-images/${name}`;
 
 const navItems: NavItem[] = [
-  { label: "Home", href: "#top" },
-  { label: "Menu", href: "#menu" },
-  { label: "Follow Us", href: "#specials" },
-  { label: "Find Us", href: "#find-us" },
-  { label: "Contact Us", href: "#contact" }
+  { label: "Home", href: "/" },
+  { label: "Menu", href: "/menu" },
+  { label: "Find Us", href: "/#find-us" },
+  { label: "Talk To Us", href: "/talk-to-us" }
 ];
 
 const categories: Category[] = [
@@ -130,6 +133,22 @@ const showcaseCategories: Category[] = [
   }
 ];
 
+function ScrollToHash() {
+  const { hash, pathname } = useLocation();
+
+  React.useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const target = document.querySelector(hash);
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [hash, pathname]);
+
+  return null;
+}
+
 function Header() {
   const [open, setOpen] = React.useState(false);
 
@@ -142,24 +161,24 @@ function Header() {
 
   return (
     <header className="site-header">
-      <a className="brand" href="#top" aria-label="Foodies home">
+      <Link className="brand" to="/" aria-label="Foodies home">
         <img src={image("foodies logo.png")} alt="" />
         <span>Foodies</span>
-      </a>
+      </Link>
       <nav className="desktop-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
-          <a key={item.href} href={item.href}>
+          <Link key={item.href} to={item.href}>
             {item.label}
-          </a>
+          </Link>
         ))}
       </nav>
-      <a className="header-search desktop-action" href="#menu" aria-label="Search the Foodies menu">
+      <Link className="header-search desktop-action" to="/search" aria-label="Search the Foodies menu">
         <Search size={22} />
-      </a>
-      <a className="mission-link desktop-action" href="#order">
+      </Link>
+      <Link className="mission-link desktop-action" to="/menu">
         <ShoppingBag size={18} />
         Order Us
-      </a>
+      </Link>
       <button className="icon-button mobile-trigger" type="button" aria-label="Open menu" onClick={() => setOpen(true)}>
         <Menu size={24} />
       </button>
@@ -169,14 +188,14 @@ function Header() {
             <X size={24} />
           </button>
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <Link key={item.href} to={item.href} onClick={() => setOpen(false)}>
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a className="button primary" href="#order" onClick={() => setOpen(false)}>
+          <Link className="button primary" to="/menu" onClick={() => setOpen(false)}>
             <ShoppingBag size={18} />
             Order now
-          </a>
+          </Link>
         </div>
       )}
     </header>
@@ -192,7 +211,7 @@ function Section2() {
       <div className="menu-showcase-top" aria-hidden="true"></div>
       <div className="showcase-card-row" aria-label="Featured menu categories">
         {showcaseCategories.map((category) => (
-          <a className="showcase-card" href={category.href} key={category.title}>
+          <Link className="showcase-card" to="/menu" key={category.title}>
             <span className="showcase-card-title">
               {category.title === "Just Hotwings" && (
                 <>
@@ -225,15 +244,15 @@ function Section2() {
               {category.title}
             </span>
             <img src={category.image} alt={category.alt} />
-          </a>
+          </Link>
         ))}
       </div>
       <div className="menu-stage">
         <img className="stage-sauce" src={image("foodies-ketchup-sachets.png")} alt="" />
-        <a className="whole-menu-link" href="#specials">
+        <Link className="whole-menu-link" to="/menu">
           View our whole menu
           <ChevronRight aria-hidden="true" size={58} strokeWidth={4} />
-        </a>
+        </Link>
         <img className="stage-chillies" src={image("red-chillies.png")} alt="" />
       </div>
     </section>
@@ -250,17 +269,17 @@ function FollowSection() {
         <h2 id="follow-title">Follow Us</h2>
         <p>We'll show you the way</p>
         <div className="social-links" aria-label="Foodies social channels">
-          <a className="social-link" href="#contact" aria-label="Foodies on Facebook">
+          <a className="social-link" href="https://www.facebook.com/" aria-label="Foodies on Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M14.5 8.1V6.6c0-.7.5-.9.9-.9h2.3V2h-3.2c-3.6 0-4.4 2.7-4.4 4.4v1.7H7.3V12h2.8v10h4.4V12h3l.5-3.9h-3.5Z" />
             </svg>
           </a>
-          <a className="social-link" href="#contact" aria-label="Foodies on X">
+          <a className="social-link" href="https://x.com/" aria-label="Foodies on X">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M17.8 3h3.1l-6.7 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.2L2 3h6.4l4.4 5.9L17.8 3Zm-1.1 16.2h1.7L7.5 4.7H5.7l11 14.5Z" />
             </svg>
           </a>
-          <a className="social-link social-link-video" href="#contact" aria-label="Foodies on YouTube">
+          <a className="social-link social-link-video" href="https://www.youtube.com/" aria-label="Foodies on YouTube">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M22 12s0-3.3-.4-4.9c-.2-.9-.9-1.6-1.8-1.8C18.2 4 12 4 12 4s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.7 2 12 2 12s0 3.3.4 4.9c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.9.4-4.9ZM10 15.5v-7l6 3.5-6 3.5Z" />
             </svg>
@@ -313,25 +332,25 @@ function FinalSection() {
         <span>© Foodies 2026</span>
         <nav aria-label="Footer navigation">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href}>
+            <Link key={item.href} to={item.href}>
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a href="#contact">Privacy Policy</a>
+          <Link to="/talk-to-us">Privacy Policy</Link>
         </nav>
         <div className="footer-social" aria-label="Follow Foodies">
           <span>Follow us</span>
-          <a href="#contact" aria-label="Foodies on Facebook">
+          <a href="https://www.facebook.com/" aria-label="Foodies on Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M14.5 8.1V6.6c0-.7.5-.9.9-.9h2.3V2h-3.2c-3.6 0-4.4 2.7-4.4 4.4v1.7H7.3V12h2.8v10h4.4V12h3l.5-3.9h-3.5Z" />
             </svg>
           </a>
-          <a href="#contact" aria-label="Foodies on X">
+          <a href="https://x.com/" aria-label="Foodies on X">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M17.8 3h3.1l-6.7 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.2L2 3h6.4l4.4 5.9L17.8 3Zm-1.1 16.2h1.7L7.5 4.7H5.7l11 14.5Z" />
             </svg>
           </a>
-          <a href="#contact" aria-label="Foodies on YouTube">
+          <a href="https://www.youtube.com/" aria-label="Foodies on YouTube">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M22 12s0-3.3-.4-4.9c-.2-.9-.9-1.6-1.8-1.8C18.2 4 12 4 12 4s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.7 2 12 2 12s0 3.3.4 4.9c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.9.4-4.9ZM10 15.5v-7l6 3.5-6 3.5Z" />
             </svg>
@@ -342,7 +361,7 @@ function FinalSection() {
   );
 }
 
-function App() {
+function HomePage() {
   return (
     <>
       <Header />
@@ -353,8 +372,8 @@ function App() {
             <h1 id="hero-title"><span>Foodies</span></h1>
             <p className="hero-subtitle">Good food, big flavour, made to share.</p>
             <div className="hero-actions">
-              <a className="hero-order button" href="#order"><ShoppingBag size={18} /> Order Now</a>
-              <a className="hero-menu button" href="#menu">View Menu <ChevronRight size={18} /></a>
+              <Link className="hero-order button" to="/menu"><ShoppingBag size={18} /> Order Now</Link>
+              <Link className="hero-menu button" to="/menu">View Menu <ChevronRight size={18} /></Link>
             </div>
           </div>
           <div className="hero-media" aria-label="Featured Foodies sharing meal">
@@ -375,6 +394,20 @@ function App() {
         <FinalSection />
       </main>
     </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToHash />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/menu" element={<><Header /><MenuPage /></>} />
+        <Route path="/talk-to-us" element={<><Header /><TalkToUsPage /></>} />
+        <Route path="/search" element={<><Header /><SearchPage /></>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
